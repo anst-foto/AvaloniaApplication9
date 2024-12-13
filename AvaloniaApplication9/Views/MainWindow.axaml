@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaApplication9.ViewModels"
+        
+        x:Class="AvaloniaApplication9.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaApplication9">
+
+    <Window.Styles>
+        <StyleInclude Source="MainWindowStyles.axaml"/>
+    </Window.Styles>
+    
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid ColumnDefinitions="*,*">
+        <StackPanel Grid.Column="0">
+            <Button Content="Button"
+                    Classes.foo="{Binding IsFoo}"/>
+            <Button Content="Button"/>
+        
+            <StackPanel>
+                <Button Content="Button"
+                        Classes="foo alarm"/>
+                <Button Content="Button"
+                        Command="{Binding Command}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <DockPanel Grid.Column="1"
+                   LastChildFill="False">
+            <Button Content="Button"
+                    Classes.alarm="{Binding IsAlarm}"
+                    Classes.warning="{Binding IsWarning}"/>
+        </DockPanel>
+    </Grid>
+</Window>
