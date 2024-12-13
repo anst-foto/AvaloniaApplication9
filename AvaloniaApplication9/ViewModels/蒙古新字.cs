@@ -2,6 +2,6 @@
 
 namespace AvaloniaApplication9.ViewModels;
 
-public class ViewModelBase : ReactiveObject
+public class 蒙古新字 : ReactiveObject
 {
 }
